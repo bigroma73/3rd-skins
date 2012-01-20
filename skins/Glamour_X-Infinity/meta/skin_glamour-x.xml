@@ -1,0 +1,19 @@
+<default>
+	<prerequisites>
+                <hardware type="dm800" />
+		<hardware type="dm800se" />
+                <hardware type="dm500hd" />
+		<tag type="Skin" />
+	</prerequisites>
+	<info>
+		<author>Unknown</author>
+		<name>Glamour_X-Infinity</name>
+		<packagename>domica-skin-glamour-x</packagename>
+		<shortdescription>Glamour_X-Infinity</shortdescription>
+		<description>Glamour_X-Infinity</description>
+	</info>
+
+	<files type="package"> <!-- without version, without .ipk -->
+		<file type="package" name="domica-skin-glamour-x" />
+	</files>
+</default>

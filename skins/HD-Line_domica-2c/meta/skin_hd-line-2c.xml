@@ -1,0 +1,19 @@
+<default>
+	<prerequisites>
+                <hardware type="dm800" />
+		<hardware type="dm800se" />
+                <hardware type="dm500hd" />
+		<tag type="Skin" />
+	</prerequisites>
+	<info>
+		<author>Metabox1</author>
+		<name>HD Line tuxbox</name>
+		<packagename>domica-skin-tuxbox</packagename>
+		<shortdescription>HD Line Tuxbox  Skin by Metabox1</shortdescription>
+		<description>HD Line Tuxbox  Skin for Dreambox Images created from Metabox1</description>
+	</info>
+
+	<files type="package"> <!-- without version, without .ipk -->
+		<file type="package" name="domica-skin-hd-line-2c" />
+	</files>
+</default>

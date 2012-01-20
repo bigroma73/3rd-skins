@@ -1,0 +1,19 @@
+<default>
+	<prerequisites>
+                <hardware type="dm800" />
+		<hardware type="dm800se" />
+                <hardware type="dm500hd" />
+		<tag type="Skin" />
+	</prerequisites>
+	<info>
+		<author>Metabox1</author>
+		<name>HD Line tvpro</name>
+		<packagename>domica-skin-tvpro</packagename>
+		<shortdescription>HD Line tvpro  Skin by Metabox1</shortdescription>
+		<description>HD Line tvpro  Skin for Dreambox Images created from Metabox1</description>
+	</info>
+
+	<files type="package"> <!-- without version, without .ipk -->
+		<file type="package" name="domica-skin-tvpro" />
+	</files>
+</default>
