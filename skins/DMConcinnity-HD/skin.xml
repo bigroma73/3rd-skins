@@ -118,7 +118,7 @@
     <convert type="ConditionalShowHide">Blink</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" position="11, 10" size="109, 45" font="Regular;28" valign="center" halign="center" backgroundColor="black" transparent="1" zPosition="3">
-    <convert type="DMCHDServiceInfo">ServiceNumber</convert>
+    <convert type="ExtendedServiceInfo">ServiceNumber</convert>
   </widget>
   <eLabel backgroundColor="white" position="121, 10" size="2, 45" zPosition="1" />
   <widget source="session.CurrentService" render="Label" position="129, 6" size="573, 32" font="Regular;26" valign="top" noWrap="1" backgroundColor="black" transparent="1">
@@ -128,7 +128,7 @@
     <convert type="ServiceName">Provider</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" position="396,37" zPosition="1" size="230, 20" font="Regular;18" halign="left" foregroundColor="grey" backgroundColor="black" transparent="1">
-    <convert type="DMCHDServiceInfo">SatName</convert>
+    <convert type="ExtendedServiceInfo">SatName</convert>
   </widget>
   <widget source="global.CurrentTime" render="Label" position="1013, 10" size="75, 23" font="Regular;23" halign="right" backgroundColor="black" transparent="1">
     <convert type="ClockToText">Default</convert>
@@ -242,14 +242,14 @@
   </widget>
   <ePixmap position="7,140" zPosition="-1" size="1126, 26" pixmap="DMConcinnity-HD/extra.png" />
   <!-- Camd Info -->
-  <widget source="session.CurrentService" render="DMCHDCaids" position="15,144" size="270,18" zPosition="3" font="Regular;16" alphatest="blend" ecmColor="green" emmColor="yellow" nocColor="grey" backgroundColor="black">
+  <widget source="session.CurrentService" render="TuxRendCaids" position="15,144" size="270,18" zPosition="3" font="Regular;16" alphatest="blend" ecmColor="green" emmColor="yellow" nocColor="grey" backgroundColor="black">
     <convert type="CaidInfo2">Default</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" position="295,144" size="550,18" zPosition="3" font="Regular;16" halign="left" noWrap="1" foregroundColor="green" backgroundColor="black" transparent="1">
     <convert type="CaidInfo2">Default</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" position="845,144" size="280,18" zPosition="3" font="Regular;16" halign="right" noWrap="1" foregroundColor="green" backgroundColor="black" transparent="1">
-    <convert type="DMCHDCamdInfo">Default</convert>
+    <convert type="CamdInfo3">Default</convert>
   </widget>
 </screen>
 
@@ -356,7 +356,7 @@
     <convert type="ServiceName">Provider</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" position="296,37" zPosition="1" size="230, 20" font="Regular;18" halign="left" foregroundColor="grey" backgroundColor="black" transparent="1">
-    <convert type="DMCHDServiceInfo">SatName</convert>
+    <convert type="ExtendedServiceInfo">SatName</convert>
   </widget>
   <widget source="RdsDecoder" render="FixedLabel" text="Rass" position="1030,16" size="  80,36" font="Regular;26" valign="top" noWrap="1" backgroundColor="black" transparent="1">
     <convert type="RdsInfo">RasInteractiveAvailable</convert>
@@ -416,14 +416,14 @@
     <convert type="RdsInfo">RadioText</convert>
   </widget>
   <!-- Camd Info -->
-  <widget source="session.CurrentService" render="DMCHDCaids" position="15,144" size="270,18" zPosition="3" font="Regular;16" alphatest="blend" ecmColor="green" emmColor="yellow" nocColor="grey" backgroundColor="black">
+  <widget source="session.CurrentService" render="TuxRendCaids" position="15,144" size="270,18" zPosition="3" font="Regular;16" alphatest="blend" ecmColor="green" emmColor="yellow" nocColor="grey" backgroundColor="black">
     <convert type="CaidInfo2">Default</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" position="295,144" size="550,18" zPosition="3" font="Regular;16" halign="left" noWrap="1" foregroundColor="green" backgroundColor="black" transparent="1">
     <convert type="CaidInfo2">Default</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" position="845,144" size="280,18" zPosition="3" font="Regular;16" halign="right" noWrap="1" foregroundColor="green" backgroundColor="black" transparent="1">
-    <convert type="DMCHDCamdInfo">Default</convert>
+    <convert type="CamdInfo3">Default</convert>
   </widget>
 </screen>
   <screen name="Volume" position="center,25" size=" 400, 28" title="Volume" zPosition="10" flags="wfNoBorder">

@@ -1,5 +1,5 @@
 
-AC_INIT([domica-skins],3.0.0,[devel@domica.biz])
+AC_INIT([3rd-skins],3.0.0,[devel@3rdparty-openpli.no-ip.biz])
 AM_INIT_AUTOMAKE([foreign])
 
 # Silent rules are available since 1.11, but older versions
@@ -59,9 +59,6 @@ skins/DMConcinnity-HD/Makefile
 skins/DMConcinnity-HD/skin_default/Makefile
 skins/DMConcinnity-HD/skin_default/icons/Makefile
 skins/DMConcinnity-HD/skin_default/buttons/Makefile
-skins/DMConcinnity-HD/python/Makefile
-skins/DMConcinnity-HD/python/Converter/Makefile
-skins/DMConcinnity-HD/python/Renderer/Makefile
 skins/DMConcinnity-HD/menu/Makefile
 skins/DMConcinnity-HD/meta/Makefile
 skins/DMConcinnity-HD/icons/Makefile

@@ -1,2 +1,0 @@
-SUBDIRS = Renderer Converter
-
