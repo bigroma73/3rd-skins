@@ -73,5 +73,7 @@ skins/Glamour_X-Infinity/icons/Makefile
 skins/Glamour_X-Infinity/general/Makefile
 skins/Glamour_X-Infinity/slider/Makefile
 skins/Glamour_X-Infinity/buttons/Makefile
+Components/Makefile.am
+Components/Converter/Makefile.am
+Components/Renderer/Makefile.am
 ])
-

@@ -1,4 +1,4 @@
-SUBDIRS = skins
+SUBDIRS = skins Components
 
 metadir = $(datadir)/meta
 meta_DATA = index-3rd-skins.xml
