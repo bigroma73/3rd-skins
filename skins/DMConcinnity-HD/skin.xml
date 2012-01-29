@@ -243,7 +243,7 @@
   <ePixmap position="7,140" zPosition="-1" size="1126, 26" pixmap="DMConcinnity-HD/extra.png" />
   <!-- Camd Info -->
   <widget source="session.CurrentService" render="TuxRendCaids" position="15,144" size="270,18" zPosition="3" font="Regular;16" alphatest="blend" ecmColor="green" emmColor="yellow" nocColor="grey" backgroundColor="black">
-    <convert type="CaidInfo2">Default</convert>
+    <convert type="CaidDisplay">Default</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" position="295,144" size="550,18" zPosition="3" font="Regular;16" halign="left" noWrap="1" foregroundColor="green" backgroundColor="black" transparent="1">
     <convert type="CaidInfo2">Default</convert>
@@ -417,7 +417,7 @@
   </widget>
   <!-- Camd Info -->
   <widget source="session.CurrentService" render="TuxRendCaids" position="15,144" size="270,18" zPosition="3" font="Regular;16" alphatest="blend" ecmColor="green" emmColor="yellow" nocColor="grey" backgroundColor="black">
-    <convert type="CaidInfo2">Default</convert>
+	  <convert type="CaidDisplay">Default</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" position="295,144" size="550,18" zPosition="3" font="Regular;16" halign="left" noWrap="1" foregroundColor="green" backgroundColor="black" transparent="1">
     <convert type="CaidInfo2">Default</convert>

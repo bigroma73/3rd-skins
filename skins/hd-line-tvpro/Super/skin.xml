@@ -253,7 +253,7 @@
 
 	<!-- Crypt Info --> 
                 <widget source="session.CurrentService" render="TuxRendCaids" position="435,632" size="440,15" font="Regular;14" zPosition="2" backgroundColor="#180B0D0F" nocColor="#445566" emmColor="#A36209" ecmColor="#00A651" transparent="1">
-                       <convert type="CaidInfo2">Default</convert>
+                       <convert type="CaidDisplay">Default</convert>
                 </widget>
         
         <!-- Cam Info  -->	
@@ -520,12 +520,17 @@
                                
         <!-- ECM Info  -->
                 <widget source="session.CurrentService" render="Label"    position="280,652" size="760,17" font="Regular;16" halign="center" zPosition="2" backgroundColor="black" foregroundColor="grey" transparent="1">
-		        <convert type="CaidInfo2">Default</convert>
+		        <convert type="CaidInfo2">%S %SP %PR %C %P %p %O %T</convert>
 		</widget>
 		
-        <!-- Bitrate Info  --> 
+        <!-- Bitrate Info -->  
                 <widget source="videobit" render="Label"    position="280,673" size="200,20" font="Regular;17" zPosition="2" backgroundColor="black" foregroundColor="blue_tux" transparent="1"/>
-				<widget source="audiobit" render="Label"    position="490,673" size="190,20" font="Regular;17" zPosition="2" backgroundColor="black" foregroundColor="blue_tux" transparent="1"/>
+				<widget source="audiobit" render="Label"    position="490,673" size="190,20" font="Regular;17" zPosition="2" backgroundColor="black" foregroundColor="blue_tux" transparent="1"/> 
+				
+		<!--   
+		<widget source="session.CurrentService" render="Label"    position="280,673" size="200,20" font="Regular;17" zPosition="2" backgroundColor="black" foregroundColor="blue_tux" transparent="1">
+			<convert type="Bitrate2">Default</convert>
+		</widget> -->
                 	
 	<!-- Signal Progressbar Start -->
 		<eLabel text="SNR" position="1115,660" 	size="25,12" font="Regular;10" valign="center" backgroundColor="blue_tux4" foregroundColor="blue_tux" transparent="1"/>
@@ -948,9 +953,9 @@
 		        <convert type="MenuEntryCompare">manual_scan</convert><convert type="ConditionalShowHide"/></widget>
 		
               <!-- Satfinder -->
-		<eLabel text="Satfinder" 					             font="Arial;15" position="580,135" size="200,17"  zPosition="5" halign="center" backgroundColor="black" foregroundColor="grey" shadowColor="black" shadowOffset="-2,-2" transparent="1"/>
-                <ePixmap pixmap="hd-line_tvpro/icons_menu/tvpro_satfinder0.png"                              position="580,10" size="200,150" zPosition="1" alphatest="on"/>
-		<widget source="menu" render="Pixmap" pixmap="hd-line_tvpro/icons_menu/tvpro_satfinder1.png" position="580,10" size="200,150" zPosition="3">
+		<eLabel text="Satfinder" 					             font="Arial;15" position="580,295" size="200,17"  zPosition="5" halign="center" backgroundColor="black" foregroundColor="grey" shadowColor="black" shadowOffset="-2,-2" transparent="1"/>
+                <ePixmap pixmap="hd-line_tvpro/icons_menu/tvpro_satfinder0.png"                              position="580,170" size="200,150" zPosition="1" alphatest="on"/>
+		<widget source="menu" render="Pixmap" pixmap="hd-line_tvpro/icons_menu/tvpro_satfinder1.png" position="580,170" size="200,150" zPosition="3">
 			<convert type="MenuEntryCompare">satfinder</convert>
 			<convert type="ConditionalShowHide" />
 		</widget>
@@ -958,9 +963,9 @@
 		        <convert type="MenuEntryCompare">satfinder</convert><convert type="ConditionalShowHide"/></widget>
 		
               <!-- Positioner setup -->
-		<eLabel text="Positioner setup" 					    font="Arial;14"   position="580,295" size="200,17"  zPosition="5" halign="center" backgroundColor="black" foregroundColor="grey" shadowColor="black" shadowOffset="-2,-2" transparent="1"/>
-                <ePixmap pixmap="hd-line_tvpro/icons_menu/tvpro_positioner0.png"                              position="580,170" size="200,150" zPosition="1" alphatest="on"/>
-		<widget source="menu" render="Pixmap" pixmap="hd-line_tvpro/icons_menu/tvpro_positioner1.png" position="580,170" size="200,150" zPosition="3">
+		<eLabel text="Positioner setup" 					    font="Arial;14"   position="580,135" size="200,17"  zPosition="5" halign="center" backgroundColor="black" foregroundColor="grey" shadowColor="black" shadowOffset="-2,-2" transparent="1"/>
+                <ePixmap pixmap="hd-line_tvpro/icons_menu/tvpro_positioner0.png"                              position="580,10" size="200,150" zPosition="1" alphatest="on"/>
+		<widget source="menu" render="Pixmap" pixmap="hd-line_tvpro/icons_menu/tvpro_positioner1.png" position="580,10" size="200,150" zPosition="3">
 			<convert type="MenuEntryCompare">positioner_setup</convert>
 			<convert type="ConditionalShowHide" />
 		</widget>
@@ -2494,7 +2499,7 @@
 		</widget>
 		<widget source="global.CurrentTime" render="TuxWatches" position="44,496" size="30,30"  zPosition="2" foregroundColor="blue_tux3" alphatest="on">
 			<convert type="TuxExtraNumText">hourHand</convert>
-		</widget>
+		</widget> 
                 <!-- eLabel text="Channel Selection" position="140,15" size="220,50" font="Regular;22" halign="right" zPosition="1" foregroundColor="blue_tux" backgroundColor="blue_tux4" transparent="1"/ -->
                 
                 <!-- Next Sattelite Info -->

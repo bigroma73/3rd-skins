@@ -395,7 +395,7 @@
         
                 <!-- Crypt Info --> 
                 <widget source="session.CurrentService" render="TuxRendCaids" position="55,648"  size="510,22" font="Regular;16" zPosition="2" backgroundColor="#30000000" nocColor="#656565" emmColor="#A36209" ecmColor="#00A651" transparent="1">
-                       <convert type="CaidInfo2">Default</convert>
+                       <convert type="CaidDisplay">Default</convert>
                 </widget>
                 <!-- Caid Info -->
                 <widget source="session.CurrentService" render="Label"       position="600,648"  size="600,22" font="Regular;18" halign="right" backgroundColor="black" foregroundColor="grey2" transparent="1">

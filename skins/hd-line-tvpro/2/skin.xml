@@ -252,7 +252,7 @@
 
 	<!-- Crypt Info --> 
                 <widget source="session.CurrentService" render="TuxRendCaids" position="435,632" size="440,15" font="Regular;14" zPosition="2" backgroundColor="#180B0D0F" nocColor="#445566" emmColor="#A36209" ecmColor="#00A651" transparent="1">
-                       <convert type="CaidInfo2">Default</convert>
+                       <convert type="CaidDisplay">Default</convert>
                 </widget>
         
         <!-- Cam Info  -->	
