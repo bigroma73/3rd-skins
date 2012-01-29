@@ -76,4 +76,16 @@ skins/Glamour_X-Infinity/buttons/Makefile
 Components/Makefile
 Components/Converter/Makefile
 Components/Renderer/Makefile
+skins/nBlack45//Makefile
+skins/nBlack45/buttons/Makefile
+skins/nBlack45/crypt/Makefile
+skins/nBlack45/fonts/Makefile
+skins/nBlack45/icons/Makefile
+skins/nBlack45/line/Makefile
+skins/nBlack45/meta/Makefile
+skins/nBlack45/pic/Makefile
+skins/nBlack45/sel/Makefile
+skins/nBlack45/skin_default/Makefile
+skins/nBlack45/skin_default/buttons/Makefile
+skins/nBlack45/skin_default/icons/Makefile
 ])

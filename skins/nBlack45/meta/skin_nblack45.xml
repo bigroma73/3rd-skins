@@ -1,0 +1,17 @@
+<default>
+	<prerequisites>
+                <hardware type="all" />
+		<tag type="Skin" />
+	</prerequisites>
+	<info>
+		<author>2boom</author>
+		<name>nBlack45</name>
+		<packagename>3rd-skin-nblack45</packagename>
+		<shortdescription>This skin created by 2boom</shortdescription>
+		<description>This skin created by 2boom</description>
+	</info>
+
+	<files type="package"> <!-- without version, without .ipk -->
+		<file type="package" name="3rd-skin-nblack45" />
+	</files>
+</default>
