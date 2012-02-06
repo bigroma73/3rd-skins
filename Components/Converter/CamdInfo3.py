@@ -38,6 +38,7 @@ class CamdInfo3(Converter, object):
 		service = self.source.service
 		info = service and service.info()
 		camd = ""
+		serlist = None
 		if not info:
 			return ""
 		# VTI 	
@@ -106,18 +107,24 @@ class CamdInfo3(Converter, object):
 			return None
 			
 		if serlist is not None:
-			cardserver = ""
-			for current in serlist.readlines():
-				cardserver = current
-			serlist.close()
+			try:
+				cardserver = ""
+				for current in serlist.readlines():
+					cardserver = current
+				serlist.close()
+			except:
+				pass
 		else:
 			cardserver = "NA"
 
 		if camdlist is not None:
-			emu = ""
-			for current in camdlist.readlines():
-				emu = current
-			camdlist.close()
+			try:
+				emu = ""
+				for current in camdlist.readlines():
+					emu = current
+				camdlist.close()
+			except:
+				pass
 		else:
 			emu = "NA"
 			
