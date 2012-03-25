@@ -523,15 +523,15 @@
 		        <convert type="CaidInfo2">%S %SP %PR %C %P %p %O %T</convert>
 		</widget>
 		
-        <!-- Bitrate Info -->  
+        <!-- Bitrate Info   
                 <widget source="videobit" render="Label"    position="280,673" size="200,20" font="Regular;17" zPosition="2" backgroundColor="black" foregroundColor="blue_tux" transparent="1"/>
 				<widget source="audiobit" render="Label"    position="490,673" size="190,20" font="Regular;17" zPosition="2" backgroundColor="black" foregroundColor="blue_tux" transparent="1"/> 
-				
-		<!--   
-		<widget source="session.CurrentService" render="Label"    position="280,673" size="200,20" font="Regular;17" zPosition="2" backgroundColor="black" foregroundColor="blue_tux" transparent="1">
-			<convert type="Bitrate2">Default</convert>
-		</widget> -->
-                	
+				-->	
+		   
+       <widget source="session.CurrentService" render="Label" position="280,673" size="550,20" font="Regular; 17" backgroundColor="black" transparent="1" halign="left"     valign="center" text="V: 19234kb/s A: 128kb/s" foregroundColor="blue_tux" zPosition="3">
+			<convert type="Bitrate2">
+			</convert>
+		</widget>
 	<!-- Signal Progressbar Start -->
 		<eLabel text="SNR" position="1115,660" 	size="25,12" font="Regular;10" valign="center" backgroundColor="blue_tux4" foregroundColor="blue_tux" transparent="1"/>
                 <eLabel text="AGC" position="1145,660" 	size="25,12" font="Regular;10" valign="center" backgroundColor="blue_tux4" foregroundColor="blue_tux" transparent="1"/>
