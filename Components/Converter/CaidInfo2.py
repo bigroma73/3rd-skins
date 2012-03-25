@@ -293,14 +293,14 @@ class CaidInfo2(Poll, Converter, object):
 						try:
 							pid = "%0.4X" % int(ecm_info.get("pid", ""),16)
 						except:
-							pass
+							pid = ""
 						if self.type == self.PID:
 							return pid
 						# oscam
 						try:
 							prov = "%0.6X" % int(ecm_info.get("prov", ""),16)
 						except:
-							pass
+							prov = ecm_info.get("prov", "")
 						if self.type == self.PROV:
 							return prov
 						ecm_time = ecm_info.get("ecm time", "")

@@ -4,7 +4,8 @@
 # ver 0.2x 11/07/2011
 # ver 0.2a 02/11/2011 added xALL (SID, VPID, APID) mod by 2boom
 # ver 0.2b 17.01.2012 xALL in radio-mode fix (SID, APID) mod by 2boom
-# ver 0.2c 01/02/2012 fix sCAIDs, xTSID, xONID mod by 2boom
+# ver 0.2c 01/02/2012 fix sCAIDs, xTSID, xONID by 2boom
+# ver 0.2d 03/02/2012 added yALL (SID, VPID, APID, TSID, ONID) mod by 2boom
 
 from Components.Converter.Converter import Converter
 from enigma import iServiceInformation, iPlayableService
@@ -18,7 +19,8 @@ class ServiceInfo2(Converter, object):
 	xONID = 3
 	xTSID = 4
 	sCAIDs = 5
-	xAll = 6
+	yAll = 6
+	xAll = 7
 
 	def __init__(self, type):
 		Converter.__init__(self, type)
@@ -29,6 +31,7 @@ class ServiceInfo2(Converter, object):
 				"xONID": (self.xONID, (iPlayableService.evUpdatedInfo,)),
 				"xTSID": (self.xTSID, (iPlayableService.evUpdatedInfo,)),
 				"sCAIDs": (self.sCAIDs, (iPlayableService.evUpdatedInfo,)),
+				"yAll": (self.yAll, (iPlayableService.evUpdatedInfo,)),
 				"xAll": (self.xAll, (iPlayableService.evUpdatedInfo,)),
 			}[type]
 
@@ -91,6 +94,14 @@ class ServiceInfo2(Converter, object):
 				return self.getServiceInfoString(info, iServiceInformation.sCAIDs)
 			except:
 				return "N/A"
+		elif self.type == self.yAll:
+			try:
+				return "SID: %0.4X  VPID: %0.4X  APID: %0.4X  TSID: %0.4X  ONID: %0.4X" % (int(self.getServiceInfoString(info, iServiceInformation.sSID)), int(self.getServiceInfoString(info, iServiceInformation.sVideoPID)), int(self.getServiceInfoString(info, iServiceInformation.sAudioPID)), int(self.getServiceInfoString(info, iServiceInformation.sTSID)), int(self.getServiceInfoString(info, iServiceInformation.sONID)))
+			except:
+				try:
+					return "SID: %0.4X  VPID: %0.4X  TSID: %0.4X  ONID: %0.4X" % (int(self.getServiceInfoString(info, iServiceInformation.sSID)), int(self.getServiceInfoString(info, iServiceInformation.sVideoPID)), int(self.getServiceInfoString(info, iServiceInformation.sTSID)), int(self.getServiceInfoString(info, iServiceInformation.sONID)))
+				except:
+					return "N/A"
 		elif self.type == self.xAll:
 			try:
 				return "SID: %0.4X  VPID: %0.4X APID: %0.4X" % (int(self.getServiceInfoString(info, iServiceInformation.sSID)), int(self.getServiceInfoString(info, iServiceInformation.sVideoPID)), int(self.getServiceInfoString(info, iServiceInformation.sAudioPID)))
@@ -98,7 +109,7 @@ class ServiceInfo2(Converter, object):
 				try:
 					return "SID: %0.4X  APID: %0.4X" % (int(self.getServiceInfoString(info, iServiceInformation.sSID)), int(self.getServiceInfoString(info, iServiceInformation.sAudioPID)))
 				except:
-					pass
+					return "N/A"
 		return ""
 
 	text = property(getText)

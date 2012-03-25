@@ -38,6 +38,7 @@ class CamdInfo3(Converter, object):
 		service = self.source.service
 		info = service and service.info()
 		camd = ""
+		camdlist = None
 		serlist = None
 		if not info:
 			return ""

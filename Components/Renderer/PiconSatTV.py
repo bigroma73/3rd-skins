@@ -5,13 +5,13 @@ from enigma import ePixmap, eTimer
 from Tools.Directories import fileExists, SCOPE_SKIN_IMAGE, SCOPE_CURRENT_SKIN, resolveFilename 
 from Components.config import config
 
-class PiconSatTVMini(Renderer):
+class PiconSatTV(Renderer):
 	__module__ = __name__
-	searchPaths = ('/usr/share/enigma2/%s/', '/media/hdd/%s/', '/media/cf/%s/', '/media/sda1/%s/', '/media/usb/%s/')
+	searchPaths = ('/usr/share/enigma2/%s/', '/media/cf/%s/', '/media/sda1/%s/', '/media/usb/%s/')
 	
 	def __init__(self):
 		Renderer.__init__(self)
-		self.path = 'piconSatMini'
+		self.path = 'piconSat'
 		self.nameCache = {}
 		self.pngname = ''
 		self.pixmaps = []
