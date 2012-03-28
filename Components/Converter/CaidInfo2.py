@@ -1,7 +1,7 @@
 #
 #  CaidInfo2 - Converter
 #
-#  ver 0.6 12/01/2012
+#  ver 0.7 28/03/2012
 #
 #  Coded by bigroma  & 2boom
 
@@ -10,6 +10,9 @@ from enigma import iServiceInformation, iPlayableService
 from Components.Element import cached
 from Poll import Poll
 import os
+
+info = {}
+old_ecm_mtime = None
 
 class CaidInfo2(Poll, Converter, object):
 	CAID = 0
@@ -42,7 +45,7 @@ class CaidInfo2(Poll, Converter, object):
 	HOST = 27
 	DELAY = 28
 	FORMAT = 29
-	my_interval = 500
+	my_interval = 1000
 
 
 	def __init__(self, type):
@@ -105,13 +108,9 @@ class CaidInfo2(Poll, Converter, object):
 		elif type == "BisEcm":
 			self.type = self.BISS_C
 		elif type == "Default" or type == "" or type == None or type == "%":
-			self.poll_interval = self.my_interval
-			self.poll_enabled = True
 			self.type = self.ALL
 		else:
 			self.type = self.FORMAT
-			self.poll_interval = self.my_interval
-			self.poll_enabled = True
 			self.sfmt = type[:]
 
 		self.systemTxtCaids = {
@@ -278,10 +277,10 @@ class CaidInfo2(Poll, Converter, object):
 			info = service and service.info()
 			if info:
 				if info.getInfoObject(iServiceInformation.sCAIDs):
+					self.poll_interval = self.my_interval
+					self.poll_enabled = True
 					ecm_info = self.ecmfile()
 					if ecm_info:
-						self.poll_interval = self.my_interval
-						self.poll_enabled = True
 						# caid
 						caid = "%0.4X" % int(ecm_info.get("caid", ""),16)
 						if self.type == self.CAID:
@@ -387,20 +386,23 @@ class CaidInfo2(Poll, Converter, object):
 	text = property(getText)
 
 	def ecmfile(self):
+		global info
+		global old_ecm_mtime
 		ecm = None
-		info = {}
 		service = self.source.service
 		if service:
-			if os.path.exists("/tmp/ecm.info"):
+			try:
+				ecm_mtime = os.stat("/tmp/ecm.info").st_mtime
+				if ecm_mtime == old_ecm_mtime:
+					return info
+				old_ecm_mtime = ecm_mtime
 				ecmf = open("/tmp/ecm.info", "rb")
 				ecm = ecmf.readlines()
-			else:
-				frontendInfo = service.frontendInfo()
-				if frontendInfo:
-					ecmpath = "/tmp/ecm%s.info" % frontendInfo.getAll(False).get("tuner_number")
-					if os.path.exists(ecmpath):
-						ecmf = open(ecmpath, "rb")
-						ecm = ecmf.readlines()
+			except:
+				old_ecm_mtime = None
+				info = {}
+				return info
+
 			if ecm:
 				for line in ecm:
 					x = line.lower().find("msec")
